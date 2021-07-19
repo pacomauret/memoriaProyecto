@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body style="margin-top:3%">
+
+
+    <section>
+
+        <!-- <img src="../assets/images/fondo2.jpg" alt="Girl in a jacket" style="width:100%;height:200px;z-index: 0;"> -->
+
+
+
+    </section>
+    <section>
+
+        <div class="container" style="z-index: 1;background-color: white; text-align: center;">
+            <h3>¿Sabes como crear una visualizaciones?</h3>
+            <p>Revisa la seccion dedicada a INFORMACIONES,
+                Si sabes, Clickea directo en NUEVA VISUALIZACION.</p>
+        </div>
+        <!-- <div class="container" style="border: 1px solid; border-radius:3px">
+      Para pensar señores
+    </div> -->
+        <div class="row" style="justify-content:space-between; margin-top:3%">
+            <div *ngFor="let example of count" class="col-3">
+                <div class="card">
+                    <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="justify-content:space-between">
+            <div class="card center col-4">
+                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card center col-4">
+                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="justify-content:space-between">
+            <div class="card center col-4">
+                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card center col-4">
+                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--   #############  INFORMACIONES POPUP   ######### -->
+    <section>
+        <div class="alert alert-warning alert-dismissible white" animate="example 5s" id="inform" role="alert"
+            style="bottom:0;position:fixed; width:80%;border-radius: 25px;left:10%; animation-name:example; animation-duration:1s;background-color: #446BF2 !important">
+            <div class="row" style="justify-content:space-between;background-color: transparent !important">
+                <!-- <strong class="col-2">INFORMACIONES</strong> -->
+                <i class="far fa-question-square fa-3x col-2 "></i>
+                <button type="button" class="button col-3" style="background-color:#2C4DBF; border-color:#2C4DBF"
+                    id="b1">
+                    Canales</button>
+                <button type="button" class="button col-3" style="background-color:#2C4DBF; border-color:#2C4DBF"
+                    id="b2">
+                    Otros</button>
+
+                <button (click)="closealert()" type="button" class="close col-1"
+                    style="color:black; background-color:transparent;border-color:transparent" data-dismiss="alert"
+                    aria-label="Close">
+                    <span aria-hidden="true" style="color:black">&times;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>
