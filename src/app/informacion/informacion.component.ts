@@ -6,13 +6,15 @@ declare var $: any
   styleUrls: ['./informacion.component.css']
 })
 export class InformacionComponent implements OnInit {
+  
 
-  constructor() { }
+constructor() { }
 
-  ngOnInit(): void {
-    $("#nueva-vis").removeClass("active");
-    $("#informacion").addClass("active");
-    $("#recomendadas").removeClass("active");
-  }
+
+ngOnInit(): void {
+  $("#nueva-vis").removeClass("active");
+  $("#informacion").addClass("active");
+  $("#recomendadas").removeClass("active");
+}
 
 }
