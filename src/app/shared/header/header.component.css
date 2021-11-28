@@ -1,0 +1,15 @@
+a {
+    color:black
+}
+#a {
+    color:black !important
+}
+
+
+.navbar-nav .nav-link {
+    color:black !important
+}
+
+.navbar-dark .navbar-brand {
+    color:black !important
+}
