@@ -22,12 +22,13 @@
 
             <div class="row" style="justify-content:center; margin-top:3%; ">
 
-                <div *ngFor="let example of count" class="col-10"
+                <div *ngFor="let example of count ;index as i"  class="col-10"
                     style='margin-bottom: 3%;background-color: transparent;'>
                     <div class="card" style='border: 0 !important; background-color: transparent;'>
                         <div class="row">
-                            <div class='col-3'>
-                                <img class="card-img-top" src="../../assets/images/Departamento de informatica.png"
+
+                            <div *ngIf='(i+2)%2==0' class='col-3'>
+                                <img  class="card-img-top" src="../../assets/images/Departamento de informatica.png"
                                     alt="Card image cap" width="40" height="auto">
                                 <i>
                                     <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades</b>:lorem impsum</p>
@@ -45,6 +46,16 @@
                                         of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
+                            </div>
+                            <div *ngIf='(i+2)%2!=0' class='col-3'>
+                                <img  class="card-img-top" src="../../assets/images/Departamento de informatica.png"
+                                    alt="Card image cap" width="40" height="auto">
+                                <i>
+                                    <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades{{i}}</b>:lorem impsum</p>
+                                </i>
+                                <i>
+                                    <p style='margin:0;color:rgb(70, 69, 69)'><b>Canales</b>:lorem impsum</p>
+                                </i>
                             </div>
                         </div>
 

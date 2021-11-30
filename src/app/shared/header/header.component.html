@@ -1,19 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-dark "
-    style="background-color: #8d9fdd !important; display: flex; ;border-radius:0;">
+    style="background-color: #8d9fdd !important; display: flex; ;
+        border: 0 0 1 0 solid;
+        border-width: thin;
+        border-style: none none  solid none;
+        padding: 10px;
+        box-shadow: 2px 3px rgb(241, 241, 241);">
 
-    <a class="navbar-brand card-header" style="white-space: normal;" href="#">Estándar de visualizaciones
+    <a class="navbar-brand" style="white-space: normal; margin-left: 3%; max-width: 300px; text-align: center;" href="#">Estándar de visualizaciones
         de criptomonedas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="vl" style='margin: 10 10 10 10 '></div>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a id='nueva-vis' class="nav-link" [routerLink]="['/links']">Nueva visualización <span
                         class="sr-only">(current)</span></a>
             </li>
+            <div class="vl" style='margin: 10 10 10 10; height: 50px;'></div>
             <li class="nav-item">
                 <a id='informacion' class="nav-link" [routerLink]="['/informacion']">Informaciones</a>
             </li>

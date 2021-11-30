@@ -13,3 +13,9 @@ a {
 .navbar-dark .navbar-brand {
     color:black !important
 }
+
+.vl {
+    border-left: 1px solid black;
+    min-height: 50%;
+    height:90px
+  }
