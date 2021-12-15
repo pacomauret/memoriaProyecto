@@ -1,9 +1,19 @@
 hr {
     display: block;
-    height: 1px;
+    height: 2px;
     border: 0;
-    border-top: 1px solid rgb(180, 180, 180);
+    border-top: 1px solid rgb(124, 124, 124);
     margin: 1em 0;
     padding: 0;
     width: 90%;
+}
+
+.multiplechoice{
+    color:black;
+    background-color: #8d9fdd;
+    border-style: solid;
+    border-width: thin;
+    border-color:black;
+    border-radius: 10px;
+    /* width: -webkit-fill-available; */
 }

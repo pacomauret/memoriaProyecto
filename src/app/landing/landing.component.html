@@ -18,44 +18,70 @@
             <h3>Bienvenido!</h3>
         </div>
 
-        <div class="card" style='margin: 3% 3% 0% 3%; background-color: #7483b4'>
+        <div class="card" style='margin: 3% 3% 0% 3%; background-color: #7483b4; border-radius: 10px;'>
 
             <div class="row" style="justify-content:center; margin-top:3%; ">
 
-                <div *ngFor="let example of count ;index as i"  class="col-10"
+                <div *ngFor="let vis of visual ;index as i" class="col-10"
                     style='margin-bottom: 3%;background-color: transparent;'>
                     <div class="card" style='border: 0 !important; background-color: transparent;'>
                         <div class="row">
 
                             <div *ngIf='(i+2)%2==0' class='col-3'>
-                                <img  class="card-img-top" src="../../assets/images/Departamento de informatica.png"
-                                    alt="Card image cap" width="40" height="auto">
-                                <i>
-                                    <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades</b>:lorem impsum</p>
-                                </i>
-                                <i>
-                                    <p style='margin:0;color:rgb(70, 69, 69)'><b>Canales</b>:lorem impsum</p>
-                                </i>
-                            </div>
-                            <div class='col-9'>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk
-                                        of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img class="card-img-top"
+                                            src={{vis.imagen}}
+                                            alt="Card image cap" width="40" height="250">
+                                        <div class="row">
+                                            <i>
+                                                <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades</b>:{{vis.propiedades}}
+                                                </p>
+                                            </i>
+                                            <i>
+                                                <p style='margin:0;color:rgb(70, 69, 69)'><b>Canales</b>:{{vis.canales}}
+                                                </p>
+                                            </i>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
+                            <div class='col-9'>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{vis.titulo}}</h5>
+                                    <p class="card-text">{{vis.descripcion}}.</p>
+                                    <p >
+                                        <a class="SeeMore" data-bs-toggle="collapse" href="#collapseExample{{i}}" role="button"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                            Ver mas <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapseExample{{i}}">
+                                        <div class="card card-body SeeMore" style='border-color: black !important;'>
+                                            <b>Estandar:</b>{{vis.estandar}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
                             <div *ngIf='(i+2)%2!=0' class='col-3'>
-                                <img  class="card-img-top" src="../../assets/images/Departamento de informatica.png"
-                                    alt="Card image cap" width="40" height="auto">
-                                <i>
-                                    <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades{{i}}</b>:lorem impsum</p>
-                                </i>
-                                <i>
-                                    <p style='margin:0;color:rgb(70, 69, 69)'><b>Canales</b>:lorem impsum</p>
-                                </i>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img class="card-img-top"
+                                        src={{vis.imagen}}
+                                            alt="Card image cap" width="40" height="250">
+                                        <i>
+                                            <p style='margin:0; color:rgb(70, 69, 69)'><b>Propiedades</b>:{{vis.propiedades}}
+                                            </p>
+                                        </i>
+                                        <i>
+                                            <p style='margin:0;color:rgb(70, 69, 69)'><b>Canales</b>:{{vis.canales}}</p>
+                                        </i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -63,43 +89,21 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="justify-content:space-between">
-            <div class="card center col-4">
-                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card center col-4">
-                <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
+        
     </section>
     <!--   #############  INFORMACIONES POPUP   ######### -->
     <section>
         <div class="alert alert-warning alert-dismissible white" animate="example 5s" id="inform" role="alert"
             style="bottom:0;position:fixed; width:35%;border-radius: 5px;right:5%; animation-name:example; animation-duration:1s;background-color: #446BF2 !important">
-            <div class="row" style="justify-content:space-between;background-color: transparent !important; width: 100%;">
+            <div class="row"
+                style="justify-content:space-between;background-color: transparent !important; width: 100%;">
                 <!-- <strong class="col-2">INFORMACIONES</strong> -->
-                <i class="far fa-question-square fa-3x col-2 me-3" style="color:black; margin-right: 3px !important;"></i>
+                <i class="far fa-question-square fa-3x col-2 me-3"
+                    style="color:black; margin-right: 3px !important;"></i>
                 <p class='col-8' style='margin-top: 2%;color:black'>Si tienes dudas clickea en <b>conceptos</b></p>
                 <button (click)="closealert()" type="button" class="close col-1"
-                    style="color:black; background-color:transparent;border-color:transparent; float:right" data-dismiss="alert"
-                    aria-label="Close">
+                    style="color:black; background-color:transparent;border-color:transparent; float:right"
+                    data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true" style="color:black">&times;</span>
                 </button>
             </div>

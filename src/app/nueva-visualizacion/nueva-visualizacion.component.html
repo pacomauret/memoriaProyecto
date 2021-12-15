@@ -1,12 +1,12 @@
 <section style="margin-top:0%">
     <div class="row">
-        <div id="left-side" class="col-5 " style="background-color: white;">
+        <div id="left-side" class="col-4 " style="background-color: white;">
 
-            <div class="center row d-flex text-center ">
+            <div class="center row d-flex text-center justify-content-center ">
                 <div class="mt-4 mb-4">
-                    <h3>¿Que propiedad piensas resaltar?</h3>
+                    <h3>¿Categoria?</h3>
                 </div>
-                <div class="col-7 ms-2 me-2">
+                <!-- <div class="col-8 ms-2 me-2">
                     <select name="select-canal" id="select-canal" class="form-select"
                         aria-label="Default select example">
                         <option selected disabled>Escoge una</option>
@@ -14,15 +14,57 @@
                         <option>Topología</option>
                         <option>Moneda</option>
                     </select>
+                </div> -->
+                <div class="col-9 multiplechoice">
+                    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel" style="width: -webkit-fill-available;">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000000">
+                                <p style="margin-top:revert;">Transacciones</p>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="10000000">
+                                <p style="margin-top:revert;">Moneda</p>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="10000000">
+                                <p style="margin-top:revert;">Topología</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <i class="fas fa-chevron-left fa-x" style="color:black"></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <i class="fas fa-chevron-right fa-x" style="color:black"></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
 
-                <button type="button" type="submit" (click)="addCanal()" class="btn btn-primary col-4 me-2" id="b2">
+
+                <div class="mt-4 mb-4">
+                    <h3>¿Propiedad?</h3>
+                </div>
+                <div class="col-9 dropdown  ">
+                    <button class="btn btn-secondary dropdown-toggle multiplechoice" style=" width: -webkit-fill-available;padding-bottom: 1rem;padding-top: 1rem;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Escoge una
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: -webkit-fill-available;padding-top: 0.5rem;padding-bottom: 0.5rem;">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                
+                <button type="button" type="submit" (click)="addCanal()" class="btn btn-primary col-8 me-2" style='margin-top: 20px;' id="b2">
                     Agregar</button>
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
-                <div *ngFor="let canal of visualizacion" class="mt-2" >
-                    <div class="alert alert-primary end-0" style="justify-content: space-between;display:flex" role="alert">
+                <div *ngFor="let canal of visualizacion" class="mt-2">
+                    <div class="alert alert-primary end-0" style="justify-content: space-between;display:flex"
+                        role="alert">
                         {{canal}}
                         <span aria-hidden="true" style="color:black">&times;</span>
                     </div>
@@ -36,7 +78,7 @@
             </div>
 
         </div>
-        <div id="right-side" class="col-7 justify-content-center" style="background-color: grey">
+        <div id="right-side" class="col-8 justify-content-center" style="background-color: rgb(156, 156, 156)">
             <div *ngFor="let example of count" class="col-9 mx-auto" style="margin:3%; justify-self: normal;">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">

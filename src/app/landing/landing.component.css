@@ -1,0 +1,9 @@
+.SeeMore{
+    background: transparent !important;
+    border-radius: 3px !important;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    color:black;
+    text-decoration: solid;
+}
