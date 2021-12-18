@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 const bootstrap = require('bootstrap')
+
 
 @Component({
   selector: 'app-root',

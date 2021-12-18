@@ -6,16 +6,7 @@
                 <div class="mt-4 mb-4">
                     <h3>¿Categoria?</h3>
                 </div>
-                <!-- <div class="col-8 ms-2 me-2">
-                    <select name="select-canal" id="select-canal" class="form-select"
-                        aria-label="Default select example">
-                        <option selected disabled>Escoge una</option>
-                        <option>Transacciones</option>
-                        <option>Topología</option>
-                        <option>Moneda</option>
-                    </select>
-                </div> -->
-                <div class="col-9 multiplechoice">
+                <!-- <div class="col-9 multiplechoice">
                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel" style="width: -webkit-fill-available;">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000000">
@@ -39,25 +30,34 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+                </div> -->
+                <div class="col-9 dropdown  ">
+                    <select  class="form-select multiplechoice" aria-label="Default select example"
+                    [(ngModel)]="categoria"
+                    style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
+                        <option selected>Escoge una</option>
+                        <option value="1" >Transacciones</option>
+                        <option value="2" >Moneda</option>
+                        <option value="3" >Topología</option>
+                    </select>
                 </div>
-
-
+                
                 <div class="mt-4 mb-4">
                     <h3>¿Propiedad?</h3>
                 </div>
                 <div class="col-9 dropdown  ">
-                    <button class="btn btn-secondary dropdown-toggle multiplechoice" style=" width: -webkit-fill-available;padding-bottom: 1rem;padding-top: 1rem;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Escoge una
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: -webkit-fill-available;padding-top: 0.5rem;padding-bottom: 0.5rem;">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </div>
+                    <select class="form-select multiplechoice" aria-label="Default select example"
+                    [(ngModel)]="propiedad"
+                    (click)='print(propiedad)'
+                    style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
+                        <option selected>Escoge una</option>
+                        <option *ngFor="let n of count" >{{n}}</option>
+                    </select>
+                </div>
 
-                
-                <button type="button" type="submit" (click)="addCanal()" class="btn btn-primary col-8 me-2" style='margin-top: 20px;' id="b2">
+
+                <button [disabled]='flagAgregar' type="button" type="submit" (click)="addCanal()" class="btn btn-primary col-8 me-2"
+                    style='margin-top: 20px;' id="b2">
                     Agregar</button>
                 <div style="justify-content: center; display:flex">
                     <hr />

@@ -6,6 +6,7 @@ import { LandingComponent } from './landing/landing.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NuevaVisualizacionComponent } from './nueva-visualizacion/nueva-visualizacion.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { InformacionComponent } from './informacion/informacion.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
