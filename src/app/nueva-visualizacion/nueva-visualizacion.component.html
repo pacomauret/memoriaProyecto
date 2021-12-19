@@ -32,42 +32,58 @@
                     </div>
                 </div> -->
                 <div class="col-9 dropdown  ">
-                    <select  class="form-select multiplechoice" aria-label="Default select example"
-                    [(ngModel)]="categoria"
-                    style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
+                    <select class="form-select multiplechoice" aria-label="Default select example"
+                        [(ngModel)]="categoria" (click)="cambiarPropiedades(categoria)"
+                        style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
                         <option selected>Escoge una</option>
-                        <option value="1" >Transacciones</option>
-                        <option value="2" >Moneda</option>
-                        <option value="3" >Topología</option>
+                        <option>Transacciones</option>
+                        <option>Moneda</option>
+                        <option>Topología</option>
                     </select>
                 </div>
-                
+
                 <div class="mt-4 mb-4">
                     <h3>¿Propiedad?</h3>
                 </div>
                 <div class="col-9 dropdown  ">
                     <select class="form-select multiplechoice" aria-label="Default select example"
-                    [(ngModel)]="propiedad"
-                    (click)='print(propiedad)'
-                    style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
+                        [(ngModel)]="propiedad" (click)='print(propiedad)'
+                        style="width: -webkit-fill-available;padding-top: 1rem;padding-bottom: 1rem;">
                         <option selected>Escoge una</option>
-                        <option *ngFor="let n of count" >{{n}}</option>
+                        <option *ngFor="let n of propiedades">{{n}}</option>
                     </select>
                 </div>
 
 
-                <button [disabled]='flagAgregar' type="button" type="submit" (click)="addCanal()" class="btn btn-primary col-8 me-2"
-                    style='margin-top: 20px;' id="b2">
+                <button [disabled]='flagAgregar' type="button" type="submit" (click)="addCanal()"
+                    class="btn btn-primary col-8 me-2" style='margin-top: 20px;' id="b2">
                     Agregar</button>
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
-                <div *ngFor="let canal of visualizacion" class="mt-2">
-                    <div class="alert alert-primary end-0" style="justify-content: space-between;display:flex"
-                        role="alert">
-                        {{canal}}
-                        <span aria-hidden="true" style="color:black">&times;</span>
+                <div *ngFor="let argumento of visualizacion" class="mt-2" style="">
+                    <div *ngIf="flagFirst==false" class="alert alert-primary end-0 row"
+                        style="justify-content: space-between;display:flex;width:75% " role="alert">
+                            <div class="col-9" style="text-align: left;color:black">
+                                <div class="col-12"><b>Categoria:</b>{{argumento[0]}}</div>
+
+                                <div class="col-12"><b>Propiedad:</b>{{argumento[1]}}</div>
+
+
+                            </div>
+                            <div class="col-1">
+
+                                <div class="vl" style=' height: 50px;'></div>
+                            </div>
+                            <div class="col-2" style='margin-top:3%'>
+
+                                <span aria-hidden="true" style="color:black;">&times;</span>
+                            </div>
+
+
+
                     </div>
+
 
                     <!-- <button type="button" class="btn btn-primary">
                     {{canal}}    <span class="badge bg-secondary">&times;</span>

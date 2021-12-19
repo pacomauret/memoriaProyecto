@@ -9,13 +9,14 @@ declare var $: any
   styleUrls: ['./nueva-visualizacion.component.css']
 })
 export class NuevaVisualizacionComponent implements OnInit {
-  count = [1,2,3];
-  // string[] propiedades;
-  canal:string=''
-  visualizacion:String[] =[];
+  count = [];
+  propiedades: any;
+  canal:string='';
+  visualizacion=[[]];
   categoria='Escoge una';
   propiedad='Escoge una';
   flagAgregar=true;
+  flagFirst=true;
 
   constructor() { }
 
@@ -25,13 +26,29 @@ export class NuevaVisualizacionComponent implements OnInit {
     $("#recomendadas").removeClass("active");
   }
   addCanal(){
-    this.canal = $('#select-canal')[0].value
-    console.log("this.canal",this.canal)
-    this.visualizacion.push(this.canal)
+    console.log("categoria=",this.categoria,"propiedad=",this.propiedad)
+    const argumento=[
+      this.categoria,
+      this.propiedad
+    ]
+    console.log("ARGUMENTO=",argumento)
+    if(this.flagFirst==true){
+      this.visualizacion.shift()
+      this.flagFirst=false
+    }
+    
+    this.visualizacion.push(<any>argumento)
   }
   cambiarPropiedades(categoria:string){
+    console.log("categoria es=",categoria)
     if (categoria=='Transacciones'){
-      // this.propiedades=['a','c'];
+      this.propiedades=['a','c'];
+    }
+    else if(categoria=='Topología'){
+      this.propiedades=['b','d'];
+    }
+    else if(categoria=='Moneda'){
+      this.propiedades=['y','z'];
     }
   }
   print(value: string){
