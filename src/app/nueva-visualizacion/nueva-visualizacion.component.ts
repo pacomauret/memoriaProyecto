@@ -43,6 +43,7 @@ export class NuevaVisualizacionComponent implements OnInit {
     console.log("categoria es=",categoria)
     if (categoria=='Transacciones'){
       this.propiedades=['a','c'];
+      
     }
     else if(categoria=='Topología'){
       this.propiedades=['b','d'];
@@ -50,6 +51,8 @@ export class NuevaVisualizacionComponent implements OnInit {
     else if(categoria=='Moneda'){
       this.propiedades=['y','z'];
     }
+    this.propiedad='Escoge una'
+    this.print(this.propiedad)
   }
   print(value: string){
     if (value != 'Escoge una'){
@@ -60,6 +63,24 @@ export class NuevaVisualizacionComponent implements OnInit {
     }
     // console.log("valor es =",value, "flag",this.flagAgregar)
 
+  }
+  delete(id:number){
+    console.log("el valor de id=",id,"and visualizacion=",this.visualizacion)
+    if (this.visualizacion.length==1){
+      this.visualizacion=[[]]
+      this.flagFirst=true
+    }
+    else{
+      if (id==0){
+        this.visualizacion.shift()
+      }
+      else{
+      this.visualizacion.splice(id,id)
+      } 
+    }
+
+    
+    console.log("el valor de id=",id,"and visualizacion after=",this.visualizacion)
   }
 
 }

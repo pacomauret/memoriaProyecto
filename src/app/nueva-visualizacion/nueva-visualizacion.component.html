@@ -61,7 +61,7 @@
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
-                <div *ngFor="let argumento of visualizacion" class="mt-2" style="">
+                <div *ngFor="let argumento of visualizacion ;index as i" class="mt-2" style="TEXT-ALIGN: -WEBKIT-CENTER">
                     <div *ngIf="flagFirst==false" class="alert alert-primary end-0 row"
                         style="justify-content: space-between;display:flex;width:75% " role="alert">
                             <div class="col-9" style="text-align: left;color:black">
@@ -75,7 +75,7 @@
 
                                 <div class="vl" style=' height: 50px;'></div>
                             </div>
-                            <div class="col-2" style='margin-top:3%'>
+                            <div (click)='delete(i)' class="col-2" type="button" style='margin-top:3%'>
 
                                 <span aria-hidden="true" style="color:black;">&times;</span>
                             </div>
