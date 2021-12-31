@@ -1,0 +1,13 @@
+.concept{
+    border-style: solid;
+    border-width: thin;
+    padding: 2%;
+}
+.link{
+    
+    color:white
+}
+.link:hover{
+    color:black
+    
+}

@@ -1,5 +1,5 @@
 <section style="margin-top:0%">
-    <div class="row">
+    <div class="row container-fluid">
         <div id="left-side" class="col-4 " style="background-color: white;">
 
             <div class="center row d-flex text-center justify-content-center ">
@@ -56,18 +56,18 @@
 
 
                 <button [disabled]='flagAgregar' type="button" type="submit" (click)="addCanal()"
-                    class="btn btn-primary col-8 me-2" style='margin-top: 20px;' id="b2">
+                    class="btn btn-primary col-8 me-2" style='margin-top: 20px;border-radius: 8px !important;' id="b2">
                     Agregar</button>
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
                 <div *ngFor="let argumento of visualizacion ;index as i" class="mt-2" style="TEXT-ALIGN: -WEBKIT-CENTER">
                     <div *ngIf="flagFirst==false" class="alert alert-primary end-0 row"
-                        style="justify-content: space-between;display:flex;width:75% " role="alert">
+                        style="justify-content: space-between;display:flex;width:75%; border-radius: 8px !important; " role="alert">
                             <div class="col-9" style="text-align: left;color:black">
-                                <div class="col-12"><b>Categoria:</b>{{argumento[0]}}</div>
+                                <div class="col-12"><b>Categoria: </b>{{argumento[0]}}</div>
 
-                                <div class="col-12"><b>Propiedad:</b>{{argumento[1]}}</div>
+                                <div class="col-12"><b>Propiedad: </b>{{argumento[1]}}</div>
 
 
                             </div>
@@ -94,7 +94,7 @@
             </div>
 
         </div>
-        <div id="right-side" class="col-8 justify-content-center" style="background-color: rgb(156, 156, 156)">
+        <div id="right-side" class="col-8 justify-content-center" style="margin-top:-3px;background-color: rgb(156, 156, 156)">
             <div *ngFor="let example of count" class="col-9 mx-auto" style="margin:3%; justify-self: normal;">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
