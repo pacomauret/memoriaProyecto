@@ -11,3 +11,10 @@
     color:black
     
 }
+
+.activeUnderscore{
+    text-decoration-line: underline;
+}
+.active{
+    color:grey;
+}

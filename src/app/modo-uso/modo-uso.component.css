@@ -1,0 +1,17 @@
+.centerCard{
+    margin: 3% 6% 0% 6%; 
+    background-color: #7483b4; 
+    border-radius: 8px; 
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid rgb(124, 124, 124);
+    margin: 1em 0;
+    padding: 0;
+    width: 90%;
+}

@@ -7,6 +7,10 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NuevaVisualizacionComponent } from './nueva-visualizacion/nueva-visualizacion.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { FormsModule } from '@angular/forms';
+import { PropiedadesComponent } from './propiedades/propiedades.component';
+import { CanalesComponent } from './canales/canales.component';
+import { ModoUsoComponent } from './modo-uso/modo-uso.component';
+import { EstandarComponent } from './estandar/estandar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { FormsModule } from '@angular/forms';
     LandingComponent,
     HeaderComponent,
     NuevaVisualizacionComponent,
-    InformacionComponent
+    InformacionComponent,
+    PropiedadesComponent,
+    CanalesComponent,
+    ModoUsoComponent,
+    EstandarComponent
   ],
   imports: [
     BrowserModule,
