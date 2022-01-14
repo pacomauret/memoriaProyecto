@@ -61,40 +61,39 @@
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
-                <div *ngFor="let argumento of visualizacion ;index as i" class="mt-2" style="TEXT-ALIGN: -WEBKIT-CENTER">
+                <div *ngFor="let argumento of visualizacion ;index as i" class="mt-2"
+                    style="TEXT-ALIGN: -WEBKIT-CENTER">
                     <div *ngIf="flagFirst==false" class="alert alert-primary end-0 row"
-                        style="justify-content: space-between;display:flex;width:75%; border-radius: 8px !important; " role="alert">
-                            <div class="col-9" style="text-align: left;color:black">
-                                <div class="col-12"><b>Categoria: </b>{{argumento[0]}}</div>
+                        style="justify-content: space-between;display:flex;width:75%; border-radius: 8px !important; "
+                        role="alert">
+                        <div class="col-9" style="text-align: left;color:black">
+                            <div class="col-12"><b>Categoria: </b>{{argumento[0]}}</div>
 
-                                <div class="col-12"><b>Propiedad: </b>{{argumento[1]}}</div>
+                            <div class="col-12"><b>Propiedad: </b>{{argumento[1]}}</div>
 
 
-                            </div>
-                            <div class="col-1">
+                        </div>
+                        <div class="col-1">
 
-                                <div class="vl" style=' height: 50px;'></div>
-                            </div>
-                            <div (click)='delete(i)' class="col-2" type="button" style='margin-top:3%'>
+                            <div class="vl" style=' height: 50px;'></div>
+                        </div>
+                        <div (click)='delete(i)' class="col-2" type="button" style='margin-top:3%'>
 
-                                <span aria-hidden="true" style="color:black;">&times;</span>
-                            </div>
+                            <span aria-hidden="true" style="color:black;">&times;</span>
+                        </div>
 
 
 
                     </div>
 
 
-                    <!-- <button type="button" class="btn btn-primary">
-                    {{canal}}    <span class="badge bg-secondary">&times;</span>
-                    </button> -->
                 </div>
 
-                <div class="ml-auto" style="height:450px"></div>
+
             </div>
 
         </div>
-        <div id="right-side" class="col-8 justify-content-center" style="margin-top:-3px;background-color: rgb(156, 156, 156)">
+        <div *ngIf="flagFirst==true" id="right-side-true" class="col-8" style="background-color: grey;">
             <div *ngFor="let example of count" class="col-9 mx-auto" style="margin:3%; justify-self: normal;">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/Memoria - Arboles2.jpg" alt="Card image cap">
@@ -108,12 +107,50 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute top-50 start-50" style="font-weight: bolder;">
+            <div class="position-absolute top-50 start-50" style="font-weight: bolder;height: max-content;">
                 Ingresa una propiedad para comenzar a mostrar ejemplos
+                <div class="ml-auto"></div>
             </div>
+            <div style='height: 514px;'>
 
+            </div>
         </div>
+        <div *ngIf='flagFirst==false' id='right-side-false' class='col-8 mt-4 mb-4'>
+            <div class="row">
+                <div class="col-1">
+                    <div class="vl" style='margin: 30px 10px 10px 10px; height: 450px;'></div>
+                </div>
+                <div class="col-10" style="text-align: -webkit-center;">
+                    <div *ngFor='let vis of resultados ;index as i' class="card" style="border:0px">
+                        <img src={{vis.imagen}} class="card-img-top" alt="..." style='width:30% !important; align-self:center'>
+                        <div class="card-body">
+                            <div class="row">
+                                <p class="card-title"><b>{{vis.titulo}}</b></p>
+                            
+                                    <p><b>Propiedades: </b>{{resultados_prop}}</p>
+                                    
+                                
+                                
+                            </div>
 
+                            <p class="card-text">{{vis.descripcion}}</p>
+                            <p >
+                                <a class="SeeMore" data-bs-toggle="collapse" href="#collapseExample{{i}}" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    Ver mas <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </p>
+                            <div class="collapse" id="collapseExample{{i}}">
+                                <div class="card card-body SeeMore" style='border-color: black !important;'>
+                                    <b>Estandar:</b>{{vis.descripcion}}
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

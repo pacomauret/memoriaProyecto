@@ -11,12 +11,14 @@ declare var $: any
 export class NuevaVisualizacionComponent implements OnInit {
   count = [];
   propiedades: any;
-  canal:string='';
-  visualizacion=[[]];
-  categoria='Escoge una';
-  propiedad='Escoge una';
-  flagAgregar=true;
-  flagFirst=true;
+  canal: string = '';
+  visualizacion = [[]];
+  resultados_prop = '';
+  resultados= [{imagen:'',titulo:'',descripcion:''}];
+  categoria = 'Escoge una';
+  propiedad = 'Escoge una';
+  flagAgregar = true;
+  flagFirst = true;
 
   constructor() { }
 
@@ -25,62 +27,104 @@ export class NuevaVisualizacionComponent implements OnInit {
     $("#informacion").removeClass("active");
     $("#recomendadas").removeClass("active");
   }
-  addCanal(){
-    console.log("categoria=",this.categoria,"propiedad=",this.propiedad)
-    const argumento=[
+
+
+  get_prop() {
+    this.resultados_prop = '';
+    for (var i = 0; i < this.visualizacion.length; i++) {
+      if (this.visualizacion.length - 1 == i) {
+        this.resultados_prop += this.visualizacion[i][1]
+      }
+      else {
+        this.resultados_prop += this.visualizacion[i][1] + ','
+      }
+    }
+  }
+  actualizar_resultados() {
+    var img = ''
+    var img2 = ''
+    if (this.visualizacion.length == 1) {
+      img = '../../assets/images/1D Color Nodos.gif'
+      this.resultados =
+      [{ imagen: img,
+      titulo: "TITULO0",
+      descripcion: "Esta visualización es utilizada en ..."}]
+    }
+    if (this.visualizacion.length == 2) {
+      img = '../../assets/images/2D Tam Ari- Col Nod.gif'
+      img2 = '../../assets/images/2D Tam Nod-Col Nod.gif'
+      this.resultados =
+        [{ imagen: img,
+        titulo: "TITULO1",
+        descripcion: "Esta visualización es utilizada en ..." },
+        { imagen:img2,
+        titulo: "TITULO2",
+        descripcion: "Esta visualización es utilizada en ..."}];
+
+    }
+
+    console.log('this.result', this.resultados)
+  }
+  addCanal() {
+    console.log("categoria=", this.categoria, "propiedad=", this.propiedad)
+    const argumento = [
       this.categoria,
       this.propiedad
     ]
-    console.log("ARGUMENTO=",argumento)
-    if(this.flagFirst==true){
+    console.log("ARGUMENTO=", argumento)
+    if (this.flagFirst == true) {
       this.visualizacion.shift()
-      this.flagFirst=false
+      this.flagFirst = false
     }
-    
+
     this.visualizacion.push(<any>argumento)
+    this.actualizar_resultados()
+    this.get_prop()
   }
-  cambiarPropiedades(categoria:string){
-    console.log("categoria es=",categoria)
-    if (categoria=='Transacciones'){
-      this.propiedades=['a','c'];
-      
+  cambiarPropiedades(categoria: string) {
+    console.log("categoria es=", categoria)
+    if (categoria == 'Transacciones') {
+      this.propiedades = ['Cantidades', 'Tiempos', 'Direcciones'];
+
     }
-    else if(categoria=='Topología'){
-      this.propiedades=['b','d'];
+    else if (categoria == 'Topología') {
+
+      this.propiedades = ['Grado de centralidad', 'Grado de salida y entrada', 'Clusterizacion', 'Herencia entre nodos'];
     }
-    else if(categoria=='Moneda'){
-      this.propiedades=['y','z'];
+    else if (categoria == 'Moneda') {
+      this.propiedades = ['y', 'z'];
     }
-    this.propiedad='Escoge una'
+    this.propiedad = 'Escoge una'
     this.print(this.propiedad)
   }
-  print(value: string){
-    if (value != 'Escoge una'){
-      this.flagAgregar=false
+  print(value: string) {
+    if (value != 'Escoge una') {
+      this.flagAgregar = false
     }
     else {
-      this.flagAgregar=true
+      this.flagAgregar = true
     }
     // console.log("valor es =",value, "flag",this.flagAgregar)
 
   }
-  delete(id:number){
-    console.log("el valor de id=",id,"and visualizacion=",this.visualizacion)
-    if (this.visualizacion.length==1){
-      this.visualizacion=[[]]
-      this.flagFirst=true
+  delete(id: number) {
+    console.log("el valor de id=", id, "and visualizacion=", this.visualizacion)
+    if (this.visualizacion.length == 1) {
+      this.visualizacion = [[]]
+      this.flagFirst = true
     }
-    else{
-      if (id==0){
+    else {
+      if (id == 0) {
         this.visualizacion.shift()
       }
-      else{
-      this.visualizacion.splice(id,id)
-      } 
+      else {
+        this.visualizacion.splice(id, id)
+      }
     }
 
-    
-    console.log("el valor de id=",id,"and visualizacion after=",this.visualizacion)
+    this.actualizar_resultados()
+    this.get_prop()
+    console.log("el valor de id=", id, "and visualizacion after=", this.visualizacion)
   }
 
 }
