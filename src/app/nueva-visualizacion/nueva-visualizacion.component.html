@@ -4,7 +4,7 @@
 
             <div class="center row d-flex text-center justify-content-center ">
                 <div class="mt-4 mb-4">
-                    <h3>¿Categoria?</h3>
+                    <h3>Categoria</h3>
                 </div>
                 <!-- <div class="col-9 multiplechoice">
                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel" style="width: -webkit-fill-available;">
@@ -57,7 +57,7 @@
 
                 <button [disabled]='flagAgregar' type="button" type="submit" (click)="addCanal()"
                     class="btn btn-primary col-8 me-2" style='margin-top: 20px;border-radius: 8px !important;' id="b2">
-                    Agregar</button>
+                    Agregar propiedad</button>
                 <div style="justify-content: center; display:flex">
                     <hr />
                 </div>
@@ -127,8 +127,8 @@
                             <div class="row">
                                 <p class="card-title"><b>{{vis.titulo}}</b></p>
                             
-                                    <p><b>Propiedades: </b>{{resultados_prop}}</p>
-                                    
+                                    <p style='margin-bottom: 0 !important;'><b>Propiedades: </b>{{resultados_prop}}</p>
+                                    <p ><b>Canales: </b>{{vis.canales}}</p>
                                 
                                 
                             </div>

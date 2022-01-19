@@ -14,7 +14,8 @@ export class NuevaVisualizacionComponent implements OnInit {
   canal: string = '';
   visualizacion = [[]];
   resultados_prop = '';
-  resultados= [{imagen:'',titulo:'',descripcion:''}];
+  resultados_can = '';
+  resultados = [{ imagen: '', titulo: '', descripcion: '', canales: '' }];
   categoria = 'Escoge una';
   propiedad = 'Escoge una';
   flagAgregar = true;
@@ -39,6 +40,12 @@ export class NuevaVisualizacionComponent implements OnInit {
         this.resultados_prop += this.visualizacion[i][1] + ','
       }
     }
+    if (this.visualizacion.length>2){
+      this.flagAgregar=true
+    }
+    else{
+      this.flagAgregar=false
+    }
   }
   actualizar_resultados() {
     var img = ''
@@ -46,21 +53,29 @@ export class NuevaVisualizacionComponent implements OnInit {
     if (this.visualizacion.length == 1) {
       img = '../../assets/images/1D Color Nodos.gif'
       this.resultados =
-      [{ imagen: img,
-      titulo: "TITULO0",
-      descripcion: "Esta visualización es utilizada en ..."}]
+        [{
+          imagen: img,
+          titulo: "1D COLOR NODOS",
+          descripcion: "Esta visualización es utilizada en ...",
+          canales: 'Color nodos'
+        }]
     }
     if (this.visualizacion.length == 2) {
       img = '../../assets/images/2D Tam Ari- Col Nod.gif'
       img2 = '../../assets/images/2D Tam Nod-Col Nod.gif'
       this.resultados =
-        [{ imagen: img,
-        titulo: "TITULO1",
-        descripcion: "Esta visualización es utilizada en ..." },
-        { imagen:img2,
-        titulo: "TITULO2",
-        descripcion: "Esta visualización es utilizada en ..."}];
-
+        [{
+          imagen: img,
+          titulo: "TITULO1",
+          descripcion: "Esta visualización es utilizada en ...",
+          canales: 'Tamaño arista y Color nodo'
+        },
+        {
+          imagen: img2,
+          titulo: "TITULO2",
+          descripcion: "Esta visualización es utilizada en ...",
+          canales: 'Tamaño nodo y Color nodos.'
+        }];
     }
 
     console.log('this.result', this.resultados)
@@ -92,7 +107,7 @@ export class NuevaVisualizacionComponent implements OnInit {
       this.propiedades = ['Grado de centralidad', 'Grado de salida y entrada', 'Clusterizacion', 'Herencia entre nodos'];
     }
     else if (categoria == 'Moneda') {
-      this.propiedades = ['y', 'z'];
+      this.propiedades = ['Anonimidad', 'Legalidad'];
     }
     this.propiedad = 'Escoge una'
     this.print(this.propiedad)
