@@ -15,7 +15,7 @@ export class NuevaVisualizacionComponent implements OnInit {
   visualizacion = [[]];
   resultados_prop = '';
   resultados_can = '';
-  resultados = [{ imagen: '', titulo: '', descripcion: '', canales: '' }];
+  resultados = [{ imagen: '', titulo: '', descripcion: '', canales: '',estandar:'' }];
   categoria = 'Escoge una';
   propiedad = 'Escoge una';
   flagAgregar = true;
@@ -50,14 +50,16 @@ export class NuevaVisualizacionComponent implements OnInit {
   actualizar_resultados() {
     var img = ''
     var img2 = ''
+    var img3 = '';
     if (this.visualizacion.length == 1) {
       img = '../../assets/images/1D Color Nodos.gif'
       this.resultados =
         [{
           imagen: img,
           titulo: "1D COLOR NODOS",
-          descripcion: "Esta visualización es utilizada en ...",
-          canales: 'Color nodos'
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Color nodos',
+          estandar:'Se utiliza el color del nodo emisor en el vertice'
         }]
     }
     if (this.visualizacion.length == 2) {
@@ -67,17 +69,45 @@ export class NuevaVisualizacionComponent implements OnInit {
         [{
           imagen: img,
           titulo: "TITULO1",
-          descripcion: "Esta visualización es utilizada en ...",
-          canales: 'Tamaño arista y Color nodo'
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Tamaño arista y Color nodo',
+          estandar:'Se utiliza color de nodos para identificar distintos nodos y se utiliza una flecha con distintos tamaños para representar la cantidad enviada'
         },
         {
           imagen: img2,
           titulo: "TITULO2",
-          descripcion: "Esta visualización es utilizada en ...",
-          canales: 'Tamaño nodo y Color nodos.'
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Tamaño nodo y Color nodos.',
+          estandar:'Se utiliza el tamaño de los nodos para representar los nodos que tienen mas movimiento de valor y el color de los nodos para identificar distintos grupos de nodos'
         }];
     }
-
+    if (this.visualizacion.length == 3) {
+      img = '../../assets/images/3D Color nodo - Color Arista - Tamaño nodo.gif'
+      img2 = '../../assets/images/2D Tam Ari- Col Nod.gif'
+      img3 = '../../assets/images/2D Tam Nod-Col Nod.gif'
+      this.resultados =
+        [{
+          imagen: img,
+          titulo: "TITULO0",
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Tamaño nodo, Color nodo y color arista',
+          estandar:'Se utiliza el tamaño de los nodos para representar los nodos que tienen mas movimiento de valor, el color de los nodos para identificar distintos grupos de nodos y utiliza el color de las aristas para mostrar un gradiente del valor enviado o recibido'
+        },
+        {
+          imagen: img2,
+          titulo: "TITULO1",
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Tamaño nodo y Color nodos.',
+          estandar:'Se utiliza color de nodos para identificar distintos nodos y se utiliza una flecha con distintos tamaños para representar la cantidad enviada'
+        },
+        {
+          imagen: img3,
+          titulo: "TITULO2",
+          descripcion: "Esta visualizacion se utiliza en [1] con el objetivo de... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
+          canales: 'Tamaño nodo y Color nodos.',
+          estandar:'Se utiliza el tamaño de los nodos para representar los nodos que tienen mas movimiento de valor y el color de los nodos para identificar distintos grupos de nodos '
+        }];
+    }
     console.log('this.result', this.resultados)
   }
   addCanal() {
